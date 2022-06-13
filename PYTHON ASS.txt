@@ -1,0 +1,88 @@
+#1.Python Program to Compute the Power of a Number
+a=int(input("Enter any number:"))
+power=int(input("Enter power:"))
+result=a**power
+print("Power of number is",result)
+
+#2.Python Program to Find LCM
+def lcm(a, b):
+
+   if a > b:
+       greater = a
+   else:
+       greater = b
+
+   while(True):
+       if((greater % a == 0) and (greater % b == 0)):
+           lcm = greater
+           break
+       greater += 1
+
+   return lcm
+n1 = 54
+n2 = 24
+print("The L.C.M. is", lcm(n1, n2))
+
+#3.Python Program to check if given array is Monotonic
+def Monotonic(A):
+  
+    return (all(A[i] <= A[i + 1] for i in range(len(A) - 1)) or
+            all(A[i] >= A[i + 1] for i in range(len(A) - 1)))
+A= [6, 7, 4, 4]
+print(Monotonic(A)
+
+#4.Python program to print all negative numbers in a range
+start = int(input("Enter the start of range: "))
+end = int(input("Enter the end of range: "))
+
+for i in range(start, end + 1):
+    
+    if i < 0:
+        print(i, end = " ")
+
+#5.A. Python program to split and join a string
+A = 'Start your journey today'
+
+print(A.split(" "))
+
+print("_".join(A.split())
+
+#5B.Python  Check if a given string is binary string or not
+import re
+input="1010"
+c=re.compile('[^01]')
+if(len(c.findall(input))):
+    print("No its not binary")
+else:
+    print("Yes it is binary")
+
+#6.A. Python program to convert time from 12 hour to 24 hour format
+def convert24(str1):
+
+    if str1[-2:] == "AM" and str1[:2] == "12":
+        return "00" + str1[2:-2]
+    elif str1[-2:] == "AM":
+        return str1[:-2] 
+    elif str1[-2:] == "PM" and str1[:2] == "12":
+        return str1[:-2]      
+    else:
+        return str(int(str1[:2]) + 12) + str1[2:8]
+print(convert24("05:05:45 PM"))
+
+#6B. Python program to find difference between current time and given time
+def difference(h1, m1, h2, m2):
+	
+	t1 = h1 * 60 + m1
+	t2 = h2 * 60 + m2
+	if (t1 == t2):
+		print("Both are same times")
+		return
+	else:
+		diff = t2-t1	
+	h = (int(diff / 60)) % 24
+	m = diff % 60
+	print(h, ":", m)
+if __name__ == "__main__":	
+	difference(8, 30, 11, 45)
+	difference(12, 23, 18, 54)
+	difference(15, 20, 15, 20)
